@@ -1,10 +1,15 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import RootLayout from "./layouts/RootLayout";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Shop />} />
+      </Route>
+    </Routes>
   );
 }
 
