@@ -4,6 +4,7 @@
   text-align: center;
 }
 * {
+  width: 100%;
   margin: 0;
   padding: 0;
   outline: none;
@@ -15,16 +16,74 @@
   flex-direction: column;
 }
 header {
-  align-self: flex-start;
   height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #ffffff;
+}
+.logo {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & img {
+    width: 50px;
+    height: 32px;
+  }
+  & h1 {
+    font: 700 34px "Montserrat", sans-serif;
+    color: #000000;
+  }
+}
+nav {
+  width: fit-content;
+}
+nav ul {
+  display: flex;
+  height: 100%;
+  text-align: center;
+  gap: 70px;
+  & li {
+    list-style-type: none;
+  }
+}
+nav ul a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.actions {
+  /* background-color: aqua; */
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+.actions .icon-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  &:hover {
+    background-color: #eeeeee;
+  }
 }
 footer {
-  align-self: flex-end;
   height: 500px;
-}
-.shop {
   background-color: #7fffd433;
+}
+.shop,
+.home,
+.about,
+.contact {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
