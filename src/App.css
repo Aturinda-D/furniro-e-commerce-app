@@ -44,11 +44,11 @@ nav ul {
   height: 100%;
   text-align: center;
   gap: 70px;
-  & li {
-    list-style-type: none;
-  }
 }
-nav ul a {
+li {
+  list-style-type: none;
+}
+a {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
@@ -75,13 +75,101 @@ nav ul a {
 }
 footer {
   height: 500px;
-  background-color: #7fffd433;
+  padding: 48px 100px;
+  text-align: left;
+  background-color: #ffffff;
+  & h6 {
+    margin-bottom: 55px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #9f9f9f;
+  }
+  & li {
+    margin-bottom: 45px;
+  }
 }
+.footer-content {
+  height: 312px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-info {
+  width: 280px;
+  & h3 {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  & p {
+    margin-top: 50px;
+    color: #9f9f9f;
+    font-weight: 400;
+  }
+}
+.footer-links {
+  width: 70px;
+}
+.footer-help {
+  width: 140px;
+}
+.footer-subscribe {
+  width: 300px;
+  & form {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer-subscribe form input {
+  height: 24px;
+  width: 200px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  &::placeholder {
+    text-transform: capitalize;
+    text-align: left;
+    color: #9f9f9f;
+  }
+  &:hover {
+    border-bottom: 2px solid #000000;
+  }
+  &:focus {
+    border: 1px solid #000000;
+  }
+}
+.footer-subscribe form button {
+  width: 85px;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: transparent;
+  &:hover {
+    border-bottom: 2px solid #000000;
+  }
+  &:active {
+    border: 1px solid #000000;
+  }
+}
+.credits {
+  height: 60px;
+  margin-top: 48px;
+  border-top: 1px solid #d9d9d9;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  align-items: flex-end;
+}
+
 .shop,
 .home,
 .about,
 .contact {
-  min-height: 200px;
+  background-color: #7fffd433;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
