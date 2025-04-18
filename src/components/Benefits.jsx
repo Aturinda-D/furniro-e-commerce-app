@@ -5,7 +5,7 @@ import { BsPatchCheck } from "react-icons/bs";
 
 const Benefits = () => {
   return (
-    <div className="benefits">
+    <section className="benefits">
       <SummaryListItem
         icon={"assets/logos/trophy.svg"}
         title={"high quality"}
@@ -26,7 +26,7 @@ const Benefits = () => {
         title={"24/7 support"}
         subtitle={"Dedicated support"}
       />
-    </div>
+    </section>
   );
 };
 

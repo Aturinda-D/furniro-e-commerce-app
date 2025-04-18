@@ -164,20 +164,6 @@ footer {
   align-items: flex-end;
 }
 
-.shop,
-.home,
-.about,
-.contact {
-  background-color: #7fffd433;
-  & main {
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 .benefits {
   height: 270px;
   background-color: #faf3ea;
@@ -213,5 +199,52 @@ footer {
     font-weight: 500;
     font-size: 18px;
     color: #898989;
+  }
+}
+
+.hero {
+  min-height: 320px;
+  text-transform: capitalize;
+  background-image: url("assets/images/shop-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #000000;
+  }
+  & p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+  }
+  & span {
+    font-weight: 300;
+  }
+}
+.display-options {
+  background-color: antiquewhite;
+  min-height: 100px;
+}
+.products {
+  background-color: #7fffd433;
+  min-height: 200px;
+}
+
+.home,
+.about,
+.contact {
+  background-color: #7fffd433;
+  & main {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
