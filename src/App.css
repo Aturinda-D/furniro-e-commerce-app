@@ -169,9 +169,49 @@ footer {
 .about,
 .contact {
   background-color: #7fffd433;
-  min-height: 300px;
+  & main {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.benefits {
+  height: 270px;
+  background-color: #faf3ea;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+.summaryli {
+  height: fit-content;
+  width: max-content;
+  gap: 0 10px;
+  text-align: left;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 60px 1fr;
+  grid-template-areas:
+    "icon title"
+    "icon subtitle";
+  & img {
+    grid-area: icon;
+    height: 60px;
+    width: 60px;
+  }
+  & h2 {
+    grid-area: title;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #242424;
+  }
+  & h3 {
+    grid-area: subtitle;
+    font-weight: 500;
+    font-size: 18px;
+    color: #898989;
+  }
 }
