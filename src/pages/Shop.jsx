@@ -2,13 +2,52 @@ import React from "react";
 import Benefits from "../components/Benefits";
 import Hero from "../components/Hero";
 import IconButton from "../components/IconButton";
+import ProductCard from "../components/ProductCard";
 import { HiViewGrid } from "react-icons/hi";
 import { BsViewList } from "react-icons/bs";
 import { RiEqualizerLine } from "react-icons/ri";
 
 const Shop = () => {
+  const sampleProducts = [
+    {
+      image: "assets/images/sample_img_1.png",
+      title: "syltherine",
+      subtitle: "stylish cafe chair",
+      price: 2500000,
+      from: 3500000,
+    },
+    {
+      image: "assets/images/sample_img_2.png",
+      title: "leviosa",
+      subtitle: "stylish cafe chair",
+      price: 2500000,
+    },
+    {
+      image: "assets/images/sample_img_3.png",
+      title: "lolito",
+      subtitle: "luxury big chair",
+      price: 7000000,
+      from: 14000000,
+    },
+    {
+      image: "assets/images/sample_img_4.png",
+      title: "respira",
+      subtitle: "outdoor bar table and stool",
+      price: 500000,
+      isNew: true,
+    },
+  ];
   const [show, setShow] = React.useState(16);
   const [sort, setSort] = React.useState("default");
+  const [products, setProducts] = React.useState([]);
+
+  React.useEffect(() => {
+    const displayedProducts = [];
+    for (let i = 1; i <= 4; i++) {
+      displayedProducts.push(...sampleProducts);
+    }
+    setProducts(displayedProducts);
+  }, []);
   return (
     <div className="shop">
       <main>
@@ -44,7 +83,19 @@ const Shop = () => {
             </div>
           </form>
         </div>
-        <div className="products"></div>
+        <div className="products">
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              image={product?.image}
+              title={product?.title}
+              subtitle={product?.subtitle}
+              price={product?.price}
+              from={product?.from}
+              isNew={product?.isNew}
+            />
+          ))}
+        </div>
       </main>
       <Benefits />
     </div>
