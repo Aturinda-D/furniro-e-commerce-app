@@ -40,7 +40,13 @@ const ProductCard = ({
         />
         <ButtonWithIcon
           label={"Compare"}
-          icon={<IoMdShare className="inner-icon" />}
+          icon={
+            <img
+              src="assets/logos/comparison.svg"
+              alt=""
+              className="inner-icon"
+            />
+          }
         />
         <ButtonWithIcon
           label={"Like"}
