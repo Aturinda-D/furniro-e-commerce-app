@@ -1,4 +1,7 @@
 import React from "react";
+import ButtonWithIcon from "./ButtonWithIcon";
+import { IoMdShare } from "react-icons/io";
+import { FaRegHeart } from "react-icons/fa";
 
 const ProductCard = ({
   image,
@@ -26,8 +29,23 @@ const ProductCard = ({
         <p>{subtitle}</p>
         <div>
           <h3>Rp. {price}</h3>
-          {from && <h4>Rp .{from}</h4>}
+          {from && <h4>Rp. {from}</h4>}
         </div>
+      </div>
+      <div className="card-overlay">
+        <button className="add-to-cart">Add to cart</button>
+        <ButtonWithIcon
+          label={"Share"}
+          icon={<IoMdShare className="inner-icon" />}
+        />
+        <ButtonWithIcon
+          label={"Compare"}
+          icon={<IoMdShare className="inner-icon" />}
+        />
+        <ButtonWithIcon
+          label={"Like"}
+          icon={<FaRegHeart className="inner-icon" />}
+        />
       </div>
     </div>
   );
