@@ -28,8 +28,8 @@ const ProductCard = ({
         <h2>{title}</h2>
         <p>{subtitle}</p>
         <div>
-          <h3>Rp. {price}</h3>
-          {from && <h4>Rp. {from}</h4>}
+          <h3>Rp. {price.toLocaleString("de-DE")}</h3>
+          {from && <h4>Rp. {from.toLocaleString("de-DE")}</h4>}
         </div>
       </div>
       <div className="card-overlay">
