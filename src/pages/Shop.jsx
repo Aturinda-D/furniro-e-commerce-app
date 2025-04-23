@@ -40,6 +40,19 @@ const Shop = () => {
   const [show, setShow] = React.useState(16);
   const [sort, setSort] = React.useState("default");
   const [products, setProducts] = React.useState([]);
+  const [filteredProducts, setFilteredProducts] = React.useState([]);
+
+  const handleOnShowChange = (e) => {
+    if (e.target.value < 0) {
+      setShow(0);
+    } else if (e.target.value > products?.length) {
+      setShow(products?.length);
+    } else if (e.target.value == "") {
+      setShow(0);
+    } else {
+      setShow(e.target.value.replace(/^0+/, ""));
+    }
+  };
 
   React.useEffect(() => {
     const displayedProducts = [];
@@ -48,6 +61,10 @@ const Shop = () => {
     }
     setProducts(displayedProducts);
   }, []);
+  React.useEffect(() => {
+    setFilteredProducts(products.filter((product, index) => index < show));
+  }, [show, products]);
+
   return (
     <div className="shop">
       <main>
@@ -60,7 +77,9 @@ const Shop = () => {
             </div>
             <IconButton icon={<HiViewGrid size={20} />} />
             <IconButton icon={<BsViewList size={20} />} />
-            <p>Showing 1-16 of 32 items</p>
+            <p>
+              Showing 1-{show} of {products?.length} items
+            </p>
           </div>
           <form>
             <div>
@@ -69,7 +88,9 @@ const Shop = () => {
                 type="number"
                 name="show"
                 value={show}
-                onChange={(e) => setShow(e.target.value)}
+                onChange={handleOnShowChange}
+                min={0}
+                max={products?.length}
               />
             </div>
             <div>
@@ -84,7 +105,7 @@ const Shop = () => {
           </form>
         </div>
         <div className="products">
-          {products.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <ProductCard
               key={index}
               image={product?.image}
